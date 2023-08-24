@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+# Install Antidote if it's not already installed
+# see: https://github.com/mattmc3/antidote
+if [ ! -d $HOME/.antidote ]; then
+    echo "== Installing Antidote..." >&2
+    git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
+fi
+
+# Install asdf if it's not already installed
+# see: https://github.com/asdf-vm/asdf
+if [ ! -d $HOME/.asdf ]; then
+    echo "== Installing asdf..." >&2
+    git clone https://github.com/asdf-vm/asdf.git ${ZDOTDIR:-$HOME}/.asdf --branch v0.12.0
+
+    echo "== Installing elixir plugin..." >&2
+    asdf plugin-add elixir
+
+    echo "== Installing nodejs plugin..." >&2
+    asdf plugin-add nodejs
+
+    echo "== Installing ruby plugin..." >&2
+    asdf plugin-add ruby
+
+    echo "== Installing languages..." >&2
+    asdf install
+
+    bundle install --gemfile $HOME/.config/Gemfile
+fi

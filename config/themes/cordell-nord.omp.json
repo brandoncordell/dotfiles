@@ -1,0 +1,101 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "#4c566a",
+          "template": "{{ .UserName }}@{{ .HostName }}"
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "#88c0d0",
+          "template": " \uf07b {{ .Path }} ",
+          "properties": {
+            "folder_separator_icon": "/",
+            "style": "full"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#b48ead",
+          "template": "{{ .HEAD }}",
+          "properties": {
+            "branch_icon": "\uf418"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#81a1c1",
+          "template": "{{ if gt .Working.Untracked 0 }} \ueadd{{ .Working.Untracked }}\u2009{{ end }}",
+          "properties": {
+            "fetch_status": true
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#a3be8c",
+          "template": "{{ if .Working.Added }}\ueadc{{ .Working.Added }}\u2009{{ end }}",
+          "properties": {
+            "fetch_status": true
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#ebbc8b",
+          "template": "{{ if .Working.Modified }}\ueade{{ .Working.Modified }}\u2009{{ end }}",
+          "properties": {
+            "fetch_status": true
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#bf616a",
+          "template": "{{ if gt .Working.Deleted 0 }}\ueadf{{ .Working.Deleted }}{{ end }}",
+          "properties": {
+            "fetch_status": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "root",
+          "style": "plain",
+          "foreground": "#cd5e42",
+          "template": "\ue3bf "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#CD4277",
+          "template": "# "
+        }
+      ],
+      "newline": true
+    }
+  ]
+}

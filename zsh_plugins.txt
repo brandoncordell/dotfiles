@@ -1,0 +1,7 @@
+ohmyzsh/ohmyzsh path:plugins/git # Git functions for zsh
+ohmyzsh/ohmyzsh path:plugins/git-prompt # Display information about the current git repository
+richardmoyer/baseballfunfacts # Fun baseball facts!
+zdharma-continuum/fast-syntax-highlighting # Faster syntax-highlighting for zsh
+zsh-users/zsh-autosuggestions # Fish-like autosuggestions for zsh
+zsh-users/zaw # zsh anything.el-like widget
+zsh-users/zsh-history-substring-search # ZSH port of Fish history search (up arrow)
