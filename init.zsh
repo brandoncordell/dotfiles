@@ -41,7 +41,6 @@ source ./install/apps.zsh # Install apps and vscode extensions
 
 # Symlink dotfiles
 header "Symlinking dotfiles"
-
 env RCRC=$HOME/dotfiles/rcrc rcup
 
 source ./install/development.zsh # Install development tools
