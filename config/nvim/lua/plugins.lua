@@ -70,6 +70,15 @@ return {
   -- rails
   { 'tpope/vim-rails', ft = 'ruby' },
   {
+    'kylechui/nvim-surround',
+    version = '*',
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup()
+    end
+  },
+
+  {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     init = function()
