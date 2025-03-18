@@ -4,7 +4,6 @@ cask '1password'
 cask '1password-cli'
 cask 'bettermouse'
 cask 'dash' # API documentation browser
-cask 'discord'
 cask 'docker'
 cask 'figma'
 cask 'firefox'
@@ -14,8 +13,17 @@ cask 'imageoptim' # Image optimization
 cask 'insomnia' # API testing
 cask 'raycast' # Alfred replacement
 cask 'slack'
+cask 'spotify'
 cask 'tableplus' # Database management
 cask 'the-unarchiver' # Unzip utility
 cask 'visual-studio-code'
 cask 'wezterm'
 cask 'zoom'
+
+# Personal apps
+unless ENV['HOMEBREW_STRICT']
+  cask 'blender'
+  cask 'discord'
+  cask 'reaper' # Digital audio workstation
+  cask 'steam'
+end
