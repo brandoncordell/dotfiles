@@ -10,12 +10,17 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
+    'bashls',
     'cssls',
     'eslint',
     'html',
+    'lua_ls',
+    'prettier',
     'rubocop',
     'solargraph',
-    'tsserver',
+    'tailwindcss',
+    'ts_ls',
+    'volar'
   },
   handlers = {
     function(server_name)
