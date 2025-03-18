@@ -36,27 +36,8 @@ else
   success '$HOME/Code directory already exists'
 fi
 
-header "Installing system dependencies"
-
-# Install Homebrew if not already installed
-if ! command -v brew &> /dev/null; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-  success "Homebrew already installed"
-fi
-
-# Install dependencies from Brewfile
-header "Installing/updating Homebrew packages"
-brew bundle --file=./config/homebrew/Brewfile
-
-if [[ $(uname -s) = "Darwin" ]]; then
-    header "Installing Mac applications"
-  brew bundle --file=./config/homebrew/Caskfile
-  brew bundle --file=./config/homebrew/Masfile
-fi
-
-header "Installing VS Code extensions"
-brew bundle --file=./config/homebrew/VSCodefile
+source ./install/dependencies.zsh # Install dependencies
+source ./install/apps.zsh # Install apps and vscode extensions
 
 # Symlink dotfiles
 header "Symlinking dotfiles"
