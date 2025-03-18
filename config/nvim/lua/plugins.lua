@@ -30,10 +30,13 @@ return {
   },
 
   -- colorscheme
-  { "rose-pine/neovim", name = "rose-pine" }
+  { 'shaunsingh/nord.nvim' },
 
   -- lualine
-  { 'nvim-lualine/lualine.nvim' },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
   {
     'akinsho/bufferline.nvim',
     version = "*",
