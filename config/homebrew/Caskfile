@@ -1,0 +1,19 @@
+cask '1password'
+cask '1password-cli'
+cask 'bettermouse'
+cask 'dash' # API documentation browser
+cask 'discord'
+cask 'docker'
+cask 'figma'
+cask 'firefox'
+cask 'github' # GitHub Desktop
+cask 'google-chrome'
+cask 'imageoptim' # Image optimization
+cask 'insomnia' # API testing
+cask 'raycast' # Alfred replacement
+cask 'slack'
+cask 'tableplus' # Database management
+cask 'the-unarchiver' # Unzip utility
+cask 'visual-studio-code'
+cask 'wezterm'
+cask 'zoom'

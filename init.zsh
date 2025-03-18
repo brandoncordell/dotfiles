@@ -53,7 +53,12 @@ fi
 # Install dependencies from Brewfile
 header "Installing Homebrew packages"
 
-brew bundle --file=./Brewfile
+brew bundle --file=./config/homebrew/Brewfile
+
+if [[ $(uname -s) = "Darwin" ]]; then
+    header "Installing Mac applications from Caskfile"
+  brew bundle --file=./config/homebrew/Caskfile
+fi
 
 # Symlink dotfiles
 header "Symlinking dotfiles"
