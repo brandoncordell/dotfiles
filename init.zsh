@@ -1,30 +1,8 @@
 #!/usr/bin/env zsh
 
-source ./zsh/functions/utils/pretty_print.zsh
+source ./install/utils.zsh
 
-# Some helper functions for printing messages
-# without polluting the file
-function header() {
-  print
-  pretty_print "$1" "blue"
-  print
-}
 
-function warn() {
-  pretty_print "$1" "yellow"
-}
-
-function error() {
-  pretty_print "$1" "red"
-}
-
-function success() {
-  pretty_print "\u2714 $1" "green"
-}
-
-function info() {
-  pretty_print "$1" "white"
-}
 
 header "Setting up dev environment"
 
