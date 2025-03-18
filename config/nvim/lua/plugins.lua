@@ -20,6 +20,12 @@ return {
     end
   },
 
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons'
+  },
+
   -- telescope
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
