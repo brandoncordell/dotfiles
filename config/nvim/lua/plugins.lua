@@ -66,6 +66,9 @@ return {
     end,
     dependencies = { {'nvim-tree/nvim-web-devicons'}}
   },
+
+  -- rails
+  { 'tpope/vim-rails', ft = 'ruby' },
   {
     'folke/which-key.nvim',
     event = 'VeryLazy',
