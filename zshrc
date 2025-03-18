@@ -1,3 +1,12 @@
+plugins=(
+  romkatv/zsh-defer # Defer initialization of functions until they're used
+  zdharma-continuum/fast-syntax-highlighting # Faster syntax-highlighting for zsh
+  zsh-users/zsh-autosuggestions # Fish-like autosuggestions for zsh
+  zsh-users/zsh-history-substring-search # ZSH port of Fish history search (up arrow)
+)
+
+plugin-load $plugins
+
 if [[ $(uname) == "Linux" ]]; then
   # Initialize homebrew for linux
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

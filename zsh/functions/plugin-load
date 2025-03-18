@@ -1,0 +1,36 @@
+##? Clone a plugin, identify its init file, source it, and add it to your fpath.
+function plugin-load {
+  local repo plugdir initfile initfiles=()
+  : ${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.zsh}/plugins}
+
+  for repo in $@; do
+    plugdir=$ZPLUGINDIR/${repo:t}
+    initfile=$plugdir/${repo:t}.plugin.zsh
+
+    if [[ ! -d $plugdir ]]; then
+      pp "Cloning $repo..." blue
+      git clone -q --depth 1 --recursive --shallow-submodules \
+        https://github.com/$repo $plugdir
+    else
+      current_remote_revision=$(git -C $plugdir rev-parse $(git -C $plugdir branch -r | tail -1))
+      current_local_revision=$(git -C $plugdir rev-parse HEAD)
+
+      if [[ $current_remote_revision != $current_local_revision ]]; then
+        plugin-update $repo $plugdir
+      else
+        pp "$repo is already installed and at the latest version" green
+      fi
+
+    fi
+
+    if [[ ! -e $initfile ]]; then
+      initfiles=($plugdir/*.{plugin.zsh,zsh-theme,zsh,sh}(N))
+      (( $#initfiles )) || { echo >&2 "No init file '$repo'." && continue }
+      ln -sf $initfiles[1] $initfile
+    fi
+
+    fpath+=$plugdir
+
+    (( $+functions[zsh-defer] )) && zsh-defer . $initfile || . $initfile
+  done
+}

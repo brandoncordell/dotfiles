@@ -1,0 +1,7 @@
+ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.zsh}/plugins}
+
+function plugin-ls() {
+  for d in $ZPLUGINDIR/*/.git; do
+    git -C "${d:h}" remote get-url origin
+  done
+}
