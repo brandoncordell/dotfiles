@@ -1,0 +1,16 @@
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
+
+# Print a message with some color
+# Usage: pretty_print "message" "color"
+#
+# $1: message
+# $2: color
+function pretty_print() {
+    readonly message=$1
+    readonly color=${2:-"white"}
+   
+    print -P "%F{$color}$message%f"
+}
+
+alias pp=pretty_print
