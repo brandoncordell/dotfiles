@@ -20,6 +20,8 @@ return {
     end
   },
 
+  -- lualine
+  { 'nvim-lualine/lualine.nvim' },
   {
     'akinsho/bufferline.nvim',
     version = "*",
