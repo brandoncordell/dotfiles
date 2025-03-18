@@ -123,4 +123,5 @@ return {
   },
 
   { 'RRethy/nvim-treesitter-endwise' },
+  { 'PriceHiller/nvim-ts-autotag' },
 }
