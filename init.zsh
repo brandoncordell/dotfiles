@@ -51,7 +51,7 @@ else
 fi
 
 # Install dependencies from Brewfile
-header "Installing Homebrew packages"
+header "Installing/updating Homebrew packages"
 
 brew bundle --file=./config/homebrew/Brewfile
 
