@@ -10,6 +10,7 @@ require 'config.keymappings'
 require 'config.options'
 require 'config.netrw'
 require 'config.windows'
+require 'config.lsp'
 
 -- Plugin configs
 require 'config.plugins.telescope'
