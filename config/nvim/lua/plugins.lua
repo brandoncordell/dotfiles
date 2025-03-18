@@ -66,4 +66,18 @@ return {
     },
     config = true
   },
+
+  -- testing
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "olimorris/neotest-rspec",
+      "zidhuss/neotest-minitest",
+      "marilari88/neotest-vitest",
+    },
+  },
 }
