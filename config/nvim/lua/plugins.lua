@@ -29,6 +29,9 @@ return {
     dependencies = { "rafamadriz/friendly-snippets" },
   },
 
+  -- colorscheme
+  { "rose-pine/neovim", name = "rose-pine" }
+
   -- lualine
   { 'nvim-lualine/lualine.nvim' },
   {
