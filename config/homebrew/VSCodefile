@@ -1,0 +1,22 @@
+# Installs VS Code extensions through Homebrew
+
+# Extensions for general development
+vscode 'bradlc.vscode-tailwindcss' # Tailwind CSS IntelliSense
+vscode 'EditorConfig.EditorConfig'
+vscode 'esbenp.prettier-vscode' # Prettier - Code formatter
+vscode 'GitHub.copilot'
+
+# Extensions for Javascript/Typescript development
+vscode 'dbaeumer.vscode-eslint' # ESLint
+vscode 'Vue.volar' # Vue - Official
+
+# Extensions for Rails development
+vscode 'aki77.rails-db-schema' # Rails DB Schema
+vscode 'aliariff.vscode-erb-beautify' # ERB Formatter/Beautify
+vscode 'kaiwood.endwise' # Endwise
+vscode 'Shopify.ruby-extensions-pack' # Ruby LSP and Sorbet support
+
+# Themes
+vscode 'arcticicestudio.nord-visual-studio-code'
+vscode 'mvllow.rose-pine'
+vscode 'ryanolsonx.solarized'

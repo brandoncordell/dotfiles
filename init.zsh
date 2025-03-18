@@ -61,6 +61,9 @@ if [[ $(uname -s) = "Darwin" ]]; then
   brew bundle --file=./config/homebrew/Masfile
 fi
 
+header "Installing VS Code extensions"
+brew bundle --file=./config/homebrew/VSCodefile
+
 # Symlink dotfiles
 header "Symlinking dotfiles"
 
