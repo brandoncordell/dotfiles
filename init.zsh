@@ -24,13 +24,13 @@ fi
 header "Setting up environment"
 
 if ! [[ -v XDG_CONFIG_HOME ]]; then
-  warn '$XDG_CONFIG_HOME not set. Setting to $HOME/.config' yellow
+  warn '`$XDG_CONFIG_HOME` not set. Setting to `$HOME`/.config' yellow
   export XDG_CONFIG_HOME=$HOME/.config
 fi
 
 # Ensure $HOME/Code exists
 if ! [[ -d $HOME/Code ]]; then
-  warn '$HOME/Code directory not found. Creating it' yellow
+  warn '`$HOME/Code` directory not found. Creating it' yellow
   mkdir $HOME/Code
 else
   success '$HOME/Code directory already exists'
@@ -47,7 +47,6 @@ fi
 
 # Install dependencies from Brewfile
 header "Installing/updating Homebrew packages"
-
 brew bundle --file=./config/homebrew/Brewfile
 
 if [[ $(uname -s) = "Darwin" ]]; then
