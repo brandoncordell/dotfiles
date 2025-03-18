@@ -1,4 +1,4 @@
-source ./zsh/functions/utils/pretty_print.zsh
+source ./zsh/functions/utils/pretty_print
 
 # Some helper functions for printing messages
 # without polluting the file
