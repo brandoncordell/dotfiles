@@ -55,3 +55,7 @@ header "Installing Homebrew packages"
 
 brew bundle --file=./Brewfile
 
+# Symlink dotfiles
+header "Symlinking dotfiles"
+
+env RCRC=$HOME/dotfiles/rcrc rcup
