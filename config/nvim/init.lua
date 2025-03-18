@@ -14,5 +14,6 @@ require 'config.lsp'
 
 -- Plugin configs
 require 'config.plugins.bufferline'
+require 'config.plugins.comment'
 require 'config.plugins.lualine'
 require 'config.plugins.telescope'
