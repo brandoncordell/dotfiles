@@ -1,0 +1,30 @@
+root = true
+
+[*]
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+end_of_line = lf
+
+[*.gemspec]
+indent_size = 2
+
+[{Brew,Cask,Mas,VSCode}file*]
+indent_size = 2
+
+[*.{js,json,ts,tsx}]
+indent_style = space
+indent_size = 2
+
+[{*[Mm]akefile*,*.mak,*.mk,depend}]
+indent_style = tab
+
+[*.{md,markdown}]
+trim_trailing_whitespace = false
+
+[*.rb]
+indent_size = 2
+
+[{*.yml,*.yaml,package.json}]
+indent_style = space
+indent_size = 2
