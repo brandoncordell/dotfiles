@@ -5,9 +5,10 @@ brew 'coreutils' # GNU core utilities
 brew 'curl'
 brew 'git'
 brew 'fzf' # Fast fuzzy finder
+brew 'mas' # Mac App Store CLI
 brew 'mise' # Tool version manager
 brew 'neovim'
-brew 'postgresql@16'
+brew 'postgresql@16', restart_service: :changed
 brew 'rcm' # Dotfile management
 brew 'ripgrep'
 
