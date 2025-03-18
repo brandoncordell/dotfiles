@@ -1,0 +1,3 @@
+# Installs Mac App Store apps through Homebrew
+
+# mas 'App Name', id: 123456789
