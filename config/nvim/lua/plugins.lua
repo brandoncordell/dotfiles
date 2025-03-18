@@ -121,4 +121,6 @@ return {
       --Config goes here
     },
   },
+
+  { 'RRethy/nvim-treesitter-endwise' },
 }
