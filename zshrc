@@ -21,7 +21,7 @@ fi
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/amro.omp.json)"
 
 # load custom executable functions
-for function in ~/.zsh/functions/*; do
+for function in ~/.zsh/functions/**/*; do
   source $function
 done
 
