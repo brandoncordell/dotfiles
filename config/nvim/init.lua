@@ -1,7 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.loaded_perl_provider = 0 -- disable Perl provider and warning
 vim.loader.enable()
-vim.opt.runtimepath:prepend(lazypath)
 
 require 'config.lazy'
 
