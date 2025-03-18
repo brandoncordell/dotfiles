@@ -49,3 +49,9 @@ if ! command -v brew &> /dev/null; then
 else
   success "Homebrew already installed"
 fi
+
+# Install dependencies from Brewfile
+header "Installing Homebrew packages"
+
+brew bundle --file=./Brewfile
+
