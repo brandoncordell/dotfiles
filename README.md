@@ -31,16 +31,16 @@ little less alien (e.g., NERDTree, Command-T, etc).
 
 Learning Vim was my first real foray into customizing my tools and workflow. During that time, many more Vim distributions popped up, and other communities began to take the same approach. When I found oh-my-zsh, it seemed the perfect time to migrate from bash to mold my environment further.
 
-The combination of Janus, oh-my-zsh, and actually learning the tools was enlightening... but it wasn't without its flaws.
+The combination of Janus, Oh My Zsh, and actually learning the tools was enlightening... but it wasn't without its flaws.
 My terminal had become **so slow**—painfully so. Just for fun, here's a [12-year old video](https://www.youtube.com/watch?v=sK_Bydx7Dsw) I recorded in one my many attempts to get help.
 
-As these things do, this led me down another rabbit hole. I cherry-picked the things I liked from Janus and oh-my-zsh to my own configs. Performance issues solved, I found another issue with my setup: syncing things between my work and personal machines. I'd used rsync, then dropbox, as well as many forgotten tools in between, before I started on the next rabbit hole.
+As these things do, this led me down another rabbit hole. I cherry-picked the things I liked from Janus and  Oh My Zsh to my own configs. Performance issues solved, I found another issue with my setup: syncing things between my work and personal machines. I'd used [rsync](https://linux.die.net/man/1/rsync), then dropbox, as well as many forgotten tools in between, before I started down the next rabbit hole.
 
 Dotfiles.
 
-At the time, there weren't a lot of good examples on Github, but when thoughtbot released rcm back in 2013, it seemed like a problem finally solved. We started using thoughtbot's dotfiles at work. It seemed like the best of all worlds. {Vim,zsh,tmux}-centric, sane defaults, and an easy ability to modify or extend their configs with the `.local` convention.
+At the time, there weren't a lot of good examples on Github, but when thoughtbot released [rcm](https://github.com/thoughtbot/rcm) back in 2013, it seemed like a problem finally solved. We started using thoughtbot's [dotfiles](https://github.com/thoughtbot/dotfiles) at work. It seemed like the best of all worlds. {Vim,zsh,tmux}-centric, sane defaults, and an easy ability to modify or extend their configs with the `.local` convention.
 
-But all good things must come to an end. I moved from Vim to Neovim, ditched many of our plugins for their Lua counterparts, and grew out of the workflow that we were using with their dotfiles. I decided to write my Neovim config from scratch, so I figured why not revisit my dotfiles as well?
+But all good things must come to an end. I moved from Vim to Neovim, ditched many of the plugins for their Lua counterparts, and grew out of the workflow that we were using with their dotfiles. I decided to write my Neovim config from scratch, so I figured why not revisit my dotfiles as well?
 
 ### TL;DR
 
@@ -62,4 +62,10 @@ These days, I tend to prefer minimalism and things that Just Work™.
 - [ ] Add MacOS settings (`defaults`) to this script
 - [ ] _probably many, many... more_
 
-##
+## Many thanks
+
+* [Yehuda Katz](https://github.com/wycats) for your work on [janus](https://github.com/carlhuda/janus) and starting me on my Vim journey all those years ago
+* [Robbie Russell](https://github.com/robbyrussell) for your work on [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) and starting me on my zsh journey all those years ago
+* [Thoughtbot](https://github.com/thoughtbot) for [rcm](https://github.com/thoughtbot/rcm) and their [dotfiles](https://github.com/thoughtbot/dotfiles)
+* [Zach Holman](https://github.com/holman/dotfiles), [Mathias Bynens](https://github.com/mathiasbynens/dotfiles), and [Dries Vints](https://github.com/driesvints/dotfiles) for the inspiration used in many parts of this project (and the code I stole)
+* [mattmc3](https://github.com/mattmc3) for the awesome work you put into [Antidote](https://github.com/mattmc3/antidote) and then making me realize [I didn't need a zsh plugin manager in the first place](https://github.com/mattmc3/zsh_unplugged)
