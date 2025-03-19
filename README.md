@@ -52,6 +52,7 @@ These days, I tend to prefer minimalism and things that Just Work™.
 * Moved from iTerm2 and tmux to Wezterm
 * Moved from Ansible to pure zsh for bootstrapping the environment
 * Moved from Antidote to a few zsh functions for managing zsh plugins (a modified version of [mattmc3/zsh_unplugged](https://github.com/mattmc3/zsh_unplugged))
+* Moved from [asdf](https://github.com/asdf-vm/asdf) to [mise](https://github.com/jdx/mise)
 
 ## Things still to change (TODO)
 
