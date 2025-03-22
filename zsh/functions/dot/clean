@@ -1,0 +1,91 @@
+DOTFILES_DIR=${DOTFILES_DIR:="$HOME/dotfiles"}
+FORCE=false
+
+# Clean up any broken dotfile symlinks
+function .clean() {
+  readonly dotfiles=($(find $DOTFILES_DIR -maxdepth 1 -mindepth 1 -type d -not -regex '.*/.[.git|images|install]*' -exec basename {} \;))
+
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -d|--dry-run) readonly dry_run=true;;
+      -f|--force) FORCE=true;;
+      -h|--help)
+        echo "Usage: .clean [-d|--dry-run] [-f|--force] [-h|--help]"
+        echo "Clean up any broken dotfile symlinks"
+        return 0
+        ;;
+    esac
+    shift
+  done
+
+  # Check the root $HOME directory
+  for link in $(find $HOME -maxdepth 1 -type l); do
+    if ! [ -e ${link} ]; then
+      if [ $dry_run ]; then
+        pretty_print "${link} is invalid. $(readlink ${link}) is no longer a valid target." red
+      else
+        until _interactive_clean $link ; do : ; done
+      fi
+    fi
+  done
+
+  # Check the directories that exist in the dotfiles directory
+  for link in $(find ${dotfiles[@]/#/$HOME/.} -type l); do
+    if ! [ -e ${link} ]; then
+      if [ $dry_run ]; then
+        pretty_print "${link} is invalid. $(readlink ${link}) is no longer a valid target." red
+      else
+        until _interactive_clean $link ; do : ; done
+      fi
+    fi
+  done
+}
+
+function _interactive_clean() {
+  local file=$1
+
+  if $FORCE; then
+    rm $file
+    pretty_print "Removed broken symbolic link for target: ${file}" green
+    return 0
+  fi
+
+  print -P "%F{blue}Broken symlink%f  $(basename ${file})"
+
+  read -s -k 1 "?Remove $file? (enter "?" for help) [Ynaq?] "
+  >&2 echo $REPLY
+
+  case $REPLY in
+    [Yy]*)
+      rm $file
+      pretty_print "Removed broken symbolic link for target: ${file}" green
+      ;;
+    [Nn]*)
+      pretty_print "Skipping ${file}" yellow
+      ;;
+    [Aa]*)
+      pretty_print "Removing all broken symbolic links" yellow
+      FORCE=true
+      return 1
+      ;;
+    [Qq]*)
+      pretty_print "Exiting" yellow
+      exit 0
+      ;;
+    [?]*)
+      print
+      pretty_print "${file} is a broken symbolic link because the target $(readlink ${file}) no longer exists." blue
+      print
+      pretty_print "  Y - yes, remove the broken symbolic link"
+      pretty_print "  n - no, leave the broken symbolic link as-is"
+      pretty_print "  a - all, remove this broken symbolic link and all others (unprompted)"
+      pretty_print "  q - quit, abort this script"
+      print
+
+      return 1
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
