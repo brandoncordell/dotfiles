@@ -7,7 +7,7 @@ source ./install/utils.zsh
 header "Installing your dotfiles"
 
 # Is this a work machine?
-while [[ ! "$use_strict" =~ ^[yYnN]$ ]]; do read "use_strict?$(pp "Is this a work machine? (y/n): ")"; done
+while [[ ! "$use_strict" =~ ^[yYnN]$ ]]; do read "use_strict?$(pretty_print "Is this a work machine? (y/n): ")"; done
 
 case $use_strict in
   y|Y) STRICT=true;;

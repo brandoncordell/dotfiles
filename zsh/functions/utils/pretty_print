@@ -9,8 +9,6 @@
 function pretty_print() {
     readonly message=$1
     readonly color=${2:-"white"}
-   
+
     print -P "%F{$color}$message%f"
 }
-
-alias pp=pretty_print

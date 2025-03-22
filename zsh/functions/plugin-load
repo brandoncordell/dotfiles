@@ -8,7 +8,7 @@ function plugin-load {
     initfile=$plugdir/${repo:t}.plugin.zsh
 
     if [[ ! -d $plugdir ]]; then
-      pp "Cloning $repo..." blue
+      pretty_print "Cloning $repo..." blue
       git clone -q --depth 1 --recursive --shallow-submodules \
         https://github.com/$repo $plugdir
     else
@@ -17,8 +17,6 @@ function plugin-load {
 
       if [[ $current_remote_revision != $current_local_revision ]]; then
         plugin-update $repo $plugdir
-      else
-        pp "$repo is already installed and at the latest version" green
       fi
 
     fi

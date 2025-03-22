@@ -9,6 +9,6 @@ ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.zsh}/plugins}
 ##?   plugin    The name of the plugin to update.
 ##?   plugin_dir The directory where the plugin is installed.
 function plugin-update() {
-  pp "Updating $1..." yellow
+  pretty_print "Updating $1..." yellow
   command git -C "$2" pull --ff --recurse-submodules --depth 1 --rebase --autostash
 }
