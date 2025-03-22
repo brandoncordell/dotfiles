@@ -6,6 +6,7 @@ brew 'curl'
 brew 'git'
 brew 'fzf' # Fast fuzzy finder
 brew 'lazygit'
+brew 'libpq'
 brew 'mas' # Mac App Store CLI
 brew 'mise' # Tool version manager
 brew 'neovim'
