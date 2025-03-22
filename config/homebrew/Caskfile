@@ -10,6 +10,7 @@ cask 'google-chrome'
 cask 'imageoptim' # Image optimization
 cask 'insomnia' # API testing
 cask 'macdown' # Markdown editor
+cask 'obsidian'
 cask 'raycast' # Alfred replacement
 cask 'slack'
 cask 'spotify'
