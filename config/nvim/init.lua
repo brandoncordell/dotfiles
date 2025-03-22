@@ -3,6 +3,7 @@ vim.g.loaded_perl_provider = 0 -- disable Perl provider and warning
 vim.loader.enable()
 
 require 'config.lazy'
+require 'config.lsp'
 
 require 'config.autocommand'
 require 'config.keymappings'
@@ -10,7 +11,6 @@ require 'config.options'
 require 'config.netrw'
 require 'config.windows'
 require 'config.colorscheme'
-require 'config.lsp'
 
 -- Plugin configs
 require 'config.plugins.bufferline'
