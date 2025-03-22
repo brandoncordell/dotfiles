@@ -49,3 +49,5 @@ _load_settings "$HOME/.zsh/configs"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# mkdir .git/safe in the root of repositories you trust
+PATH=".git/safe/../../bin:$PATH"
