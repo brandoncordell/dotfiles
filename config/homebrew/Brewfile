@@ -5,6 +5,7 @@ brew 'coreutils' # GNU core utilities
 brew 'curl'
 brew 'git'
 brew 'fzf' # Fast fuzzy finder
+brew 'lazygit'
 brew 'mas' # Mac App Store CLI
 brew 'mise' # Tool version manager
 brew 'neovim'
