@@ -7,19 +7,6 @@ plugins=(
 
 plugin-load $plugins
 
-if [[ $(uname) == "Linux" ]]; then
-  # Initialize homebrew for linux
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
-if [[ $(uname) == "Darwin" ]]; then
-  # Make sure homerbew is in the PATH
-  export PATH=$PATH:/opt/homebrew/bin
-fi
-
-# Initialize Oh My Posh and load theme
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/amro.omp.json)"
-
 # load custom executable functions
 for function in ~/.zsh/functions/**/*; do
   source $function
@@ -62,4 +49,3 @@ _load_settings "$HOME/.zsh/configs"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(mise activate zsh)"
