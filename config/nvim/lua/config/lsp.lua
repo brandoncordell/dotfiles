@@ -15,7 +15,6 @@ require('mason-lspconfig').setup({
     'eslint',
     'html',
     'lua_ls',
-    'prettier',
     'rubocop',
     'solargraph',
     'tailwindcss',
