@@ -2,6 +2,7 @@
 # Dependencies
 ##
 brew 'coreutils' # GNU core utilities
+brew 'cmake'
 brew 'curl'
 brew 'git'
 brew 'fzf' # Fast fuzzy finder
