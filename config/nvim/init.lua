@@ -15,6 +15,7 @@ require 'config.colorscheme'
 -- Plugin configs
 require 'config.plugins.bufferline'
 require 'config.plugins.comment'
+require 'config.plugins.formatter'
 require 'config.plugins.lualine'
 require 'config.plugins.luasnip'
 require 'config.plugins.neotest'
