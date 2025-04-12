@@ -15,6 +15,7 @@ vscode 'aki77.rails-db-schema' # Rails DB Schema
 vscode 'aliariff.vscode-erb-beautify' # ERB Formatter/Beautify
 vscode 'kaiwood.endwise' # Endwise
 vscode 'Shopify.ruby-extensions-pack' # Ruby LSP and Sorbet support
+vscode 'KoichiSasada.vscode-rdbg' # Rdbg support
 
 # Themes
 vscode 'arcticicestudio.nord-visual-studio-code'
