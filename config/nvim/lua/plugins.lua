@@ -1,24 +1,35 @@
 return {
-  -- treesitter
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    dependencies = {
-      'RRethy/nvim-treesitter-endwise',
-      'PriceHiller/nvim-ts-autotag',
-    },
-    config = function()
-      local configs = require('nvim-treesitter.configs')
+	-- treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		dependencies = {
+			"RRethy/nvim-treesitter-endwise",
+			"PriceHiller/nvim-ts-autotag",
+		},
+		config = function()
+			local configs = require("nvim-treesitter.configs")
 
-      configs.setup({
-        autotag = { enable = true },
-        endwise = { enable = true },
-        ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'elixir', 'javascript', 'html', 'ruby', 'typescript' },
-        highlight = { enable = true },
-        indent = { enable = true },
-      })
-    end
-  },
+			configs.setup({
+				autotag = { enable = true },
+				endwise = { enable = true },
+				ensure_installed = {
+					"c",
+					"lua",
+					"vim",
+					"vimdoc",
+					"query",
+					"elixir",
+					"javascript",
+					"html",
+					"ruby",
+					"typescript",
+				},
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end,
+	},
 
   -- diagnostics
   {
@@ -94,117 +105,124 @@ return {
     dependencies = { "rafamadriz/friendly-snippets" },
   },
 
-  -- colorscheme
-  { 'shaunsingh/nord.nvim' },
+	-- colorscheme
+	{ "shaunsingh/nord.nvim" },
 
-  -- lualine
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
-  },
-  {
-    'akinsho/bufferline.nvim',
-    version = "*",
-    dependencies = 'nvim-tree/nvim-web-devicons'
-  },
+	-- lualine
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+	},
 
-  -- telescope
-  {
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'BurntSushi/ripgrep',
-    }
-  },
-  {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+	-- telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.2",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"BurntSushi/ripgrep",
+		},
+	},
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
-  { 'numToStr/Comment.nvim' },
+	{ "numToStr/Comment.nvim" },
 
-  -- lsp
-  { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
-  { 'neovim/nvim-lspconfig' },
-  { 'hrsh7th/nvim-cmp' },
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'mhartington/formatter.nvim' },
+	-- lsp
+	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
+	{ "neovim/nvim-lspconfig" },
+	{ "mhartington/formatter.nvim" },
 
-  -- dashboard
-  {
-    'glepnir/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup()
-    end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'}}
-  },
+	-- autocomplete
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-cmdline" },
+	{ "saadparwaiz1/cmp_luasnip" },
+	{ "hrsh7th/nvim-cmp" },
 
-  -- rails
-  { 'tpope/vim-rails', ft = 'ruby' },
-  {
-    'kylechui/nvim-surround',
-    version = '*',
-    event = 'VeryLazy',
-    config = function()
-      require('nvim-surround').setup()
-    end
-  },
+	-- dashboard
+	{
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup()
+		end,
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
 
-  {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = { }
-  },
-  -- git
-  {
-    "kdheepak/lazygit.nvim",
-    lazy = true,
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-      "LazyGitCurrentFile",
-      "LazyGitFilter",
-      "LazyGitFilterCurrentFile",
-    },
-    -- optional for floating window border decoration
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    -- setting the keybinding for LazyGit with 'keys' is recommended in
-    -- order to load the plugin when the command is run for the first time
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-    }
-  },
+	-- rails
+	{ "tpope/vim-rails", ft = "ruby" },
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup()
+		end,
+	},
 
-  -- testing
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "olimorris/neotest-rspec",
-      "zidhuss/neotest-minitest",
-      "marilari88/neotest-vitest",
-    },
-  },
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {},
+	},
+	-- git
+	{
+		"kdheepak/lazygit.nvim",
+		lazy = true,
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		-- setting the keybinding for LazyGit with 'keys' is recommended in
+		-- order to load the plugin when the command is run for the first time
+		keys = {
+			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+		},
+	},
 
-  -- pairs
-  {
-    'altermo/ultimate-autopair.nvim',
-    event={'InsertEnter','CmdlineEnter'},
-    branch='v0.6', --recommended as each new version will have breaking changes
-    opts={
-      --Config goes here
-    },
-  },
+	-- testing
+	{
+		"nvim-neotest/neotest",
+		dependencies = {
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"olimorris/neotest-rspec",
+			"zidhuss/neotest-minitest",
+			"marilari88/neotest-vitest",
+		},
+	},
 
-  { 'RRethy/nvim-treesitter-endwise' },
-  { 'PriceHiller/nvim-ts-autotag' },
+	-- pairs
+	{
+		"altermo/ultimate-autopair.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+		branch = "v0.6", --recommended as each new version will have breaking changes
+		opts = {
+			--Config goes here
+		},
+	},
+
+	{ "RRethy/nvim-treesitter-endwise" },
+	{ "PriceHiller/nvim-ts-autotag" },
 }
