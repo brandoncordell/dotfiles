@@ -13,6 +13,9 @@ panes.apply_to_config(config)
 local tabs = require("tabs")
 tabs.apply_to_config(config)
 
+local workspaces = require("workspaces")
+workspaces.apply_to_config(config)
+
 -- leader
 config.leader = {
 	key = "f",
