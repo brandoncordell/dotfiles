@@ -16,6 +16,7 @@ brew 'overmind'
 brew 'postgresql@16', restart_service: :changed
 brew 'rcm' # Dotfile management
 brew 'ripgrep'
+brew 'zoxide' # `cd` better than `cd`
 
 ##
 # Utilities
