@@ -21,4 +21,5 @@ brew 'zoxide' # `cd` better than `cd`
 ##
 # Utilities
 ##
+tap 'jandedobbeleer/oh-my-posh'
 brew 'jandedobbeleer/oh-my-posh/oh-my-posh' # Easier zsh prompt customization
