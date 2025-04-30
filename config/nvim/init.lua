@@ -11,6 +11,7 @@ require("config.options")
 require("config.netrw")
 require("config.windows")
 require("config.colorscheme")
+require("config.transparency")
 
 -- Plugin configs
 require("config.plugins.autocomplete")

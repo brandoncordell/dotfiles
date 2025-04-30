@@ -43,6 +43,7 @@ function module.apply_to_config(config)
 	config.use_fancy_tab_bar = false
 
 	-- window dressing
+	config.macos_window_background_blur = 20
 	config.window_background_opacity = 0.95
 	config.window_frame = {
 		active_titlebar_bg = "#00ffff",
