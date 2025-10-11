@@ -51,3 +51,13 @@ _load_settings "$HOME/.zsh/configs"
 
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/brandoncordell/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+export PNPM_HOME="/Users/brandoncordell/.node/corepack/pnpm/6.11.0/bin"
+export PATH="$PNPM_HOME:$PATH"

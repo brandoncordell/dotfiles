@@ -5,18 +5,27 @@ brew 'coreutils' # GNU core utilities
 brew 'cmake'
 brew 'curl'
 brew 'git'
+brew 'gmp'
 brew 'fzf' # Fast fuzzy finder
 brew 'lazygit'
 brew 'libpq'
+brew 'libyaml'
 brew 'luarocks'
 brew 'mas' if OS.mac? # Mac App Store CLI
 brew 'mise' # Tool version manager
-brew 'neovim'
+brew 'neovim', args: %i[HEAD] # neovim-nightly
 brew 'overmind'
 brew 'postgresql@16', restart_service: :changed
 brew 'rcm' # Dotfile management
 brew 'ripgrep'
+brew 'rust'
+brew 'tree-sitter-cli'
 brew 'zoxide' # `cd` better than `cd`
+
+##
+# Language Servers
+##
+brew 'lua-language-server'
 
 ##
 # Utilities
