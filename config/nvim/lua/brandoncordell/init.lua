@@ -7,3 +7,4 @@ require("brandoncordell.keymaps")
 require("brandoncordell.lsp")
 
 require("brandoncordell.packages.treesitter")
+require("brandoncordell.packages.mini")
