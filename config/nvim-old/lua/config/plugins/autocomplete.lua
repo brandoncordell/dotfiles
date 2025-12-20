@@ -18,6 +18,14 @@ cmp.setup({
 	}),
 })
 
+cmp.setup.cmdline(":", {
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
+})
+
 cmp.setup.cmdline({ "/", "?" }, {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
@@ -37,9 +45,3 @@ local language_servers = {
 	"ts_ls",
 	"volar",
 }
-
-for _, ls in pairs(language_servers) do
-	require("lspconfig")[ls].setup({
-		capabilities = capabilities,
-	})
-end

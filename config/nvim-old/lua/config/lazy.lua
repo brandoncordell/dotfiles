@@ -15,11 +15,23 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-	spec = {
-		{ import = "plugins" },
-    { import = "plugins.coding" },
-    { import = "plugins.colorschemes" }
-	},
-	checker = { enabled = true },
+require('lazy').setup('plugins', {
+  defaults = { lazy = true },
+  install = {
+    missing = true,
+    colorscheme = { "nord" },
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        'gzip',
+        'matchit',
+        'matchparen',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
+      },
+    },
+  },
 })

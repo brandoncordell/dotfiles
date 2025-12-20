@@ -51,3 +51,18 @@ _load_settings "$HOME/.zsh/configs"
 
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
+
+# bit
+case ":$PATH:" in
+  *":/Users/brandoncordell/bin:"*) ;;
+  *) export PATH="$PATH:/Users/brandoncordell/bin" ;;
+esac
+# bit end
+
+# pnpm
+export PNPM_HOME="/Users/brandoncordell/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
