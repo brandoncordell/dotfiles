@@ -8,3 +8,4 @@ export PATH="$XDG_BIN_HOME:$PATH"
 
 # Define paths for common programs not using XDG
 export DOTFILES_DIR="$HOME/dotfiles"
+. "/Users/brandoncordell/.local/share/bob/env/env.sh"
