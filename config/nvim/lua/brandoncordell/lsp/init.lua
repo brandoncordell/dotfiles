@@ -1,0 +1,36 @@
+local language_servers = {
+  "ansiblels",
+  "bashls",
+  "css_variables",
+  "cssls",
+  "cssmodules_ls",
+  "docker_compose_language_service",
+  "docker_language_server",
+  "dockerls",
+  "elixirls",
+  "emmet_language_server",
+  "gh_actions_ls",
+  "home_assistant",
+  "html",
+  "jsonls",
+  "jqls",
+  "lua_ls",
+  "markdown-oxide",
+  "oxfmt",
+  "oxlint",
+  "ruby_lsp",
+  "rust_analyzer",
+  "shopify_theme_ls",
+  "sorbet",
+  "stimulus_ls",
+  "stylelint_lsp",
+  "stylua",
+  "systemd_lsp",
+  "tailwindcss",
+  "ts_ls",
+  "tsgo",
+}
+
+for _, language_server in ipairs(language_servers) do
+  vim.lsp.enable(language_server)
+end

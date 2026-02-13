@@ -10,7 +10,7 @@ map("n", "<C-j>", "<C-w><C-j>")
 map("n", "<C-k>", "<C-w><C-k>")
 map("n", "<C-l>", "<C-w><C-l>")
 
--- file finding
--- vim.keymap.set("n", "<leader>ff", ":Pick files<CR>")
--- vim.keymap.set("n", "<leader>fg", ":Pick grep_live<CR>")
--- vim.keymap.set("n", "<leader>fp", ":Pick git_files<CR>")
+-- clear highlight search
+map("n", "<Leader>hl", ":nohlsearch<CR>")
+
+

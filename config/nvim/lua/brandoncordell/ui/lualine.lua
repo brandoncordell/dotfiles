@@ -1,6 +1,6 @@
 require("lualine").setup({
   options = {
-    theme = "tokyonight"
+    theme = "nord"
   },
   opts = function(_, opts)
     local trouble = require('trouble')
