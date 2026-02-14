@@ -1,0 +1,8 @@
+# Themes
+background-opacity = 0.9
+theme = Nord
+
+# Fonts
+font-family = FiraCode Nerd Font Mono Ret
+font-family-bold = FiraCode Nerd Font Mono SemBd
+font-feature = +calt, +liga, +dlig

@@ -6,6 +6,7 @@ cask 'docker'
 cask 'figma'
 cask 'firefox'
 cask 'github' # GitHub Desktop
+cask 'ghostty'
 cask 'google-chrome'
 cask 'imageoptim' # Image optimization
 cask 'insomnia' # API testing
@@ -17,7 +18,6 @@ cask 'spotify'
 cask 'tableplus' # Database management
 cask 'the-unarchiver' # Unzip utility
 cask 'visual-studio-code'
-cask 'wezterm'
 cask 'zoom'
 
 # Personal apps
